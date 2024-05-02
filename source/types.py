@@ -84,36 +84,47 @@ class Path:
             elif isinstance(segment, Arc):
                 arc = segment
 
-                def calculate_arc_center(arc):
-                    radius = abs(arc.radius.real) + abs(arc.radius.imag)  # Радиус дуги
+                def calculate_arc(arc):
+                    radius = (abs(arc.radius.real) + abs(arc.radius.imag)) / 2  # Радиус дуги
                     start_angle = np.angle(arc.start - arc.center)  # Начальный угол
                     end_angle = np.angle(arc.end - arc.center)  # Конечный угол
-                    center = (arc.center.real, arc.center.imag)  # Центр дуги
+                    center = np.array([arc.center.real, arc.center.imag, 1])  # Центр дуги
 
-                    return center, start_angle, end_angle, radius
+                    start_x = center[0] + radius * np.cos(start_angle)
+                    start_y = center[1] + radius * np.sin(start_angle)
 
-                center, start_angle, end_angle, radius = calculate_arc_center(arc)
+                    end_x = center[0] + radius * np.cos(end_angle)
+                    end_y = center[1] + radius * np.sin(end_angle)
 
-                new_start_angle = start_angle
+                    return center, radius, np.array([start_x, start_y, 1]), np.array([end_x, end_y, 1])
 
-                new_end_angle = end_angle
+                def calculate_arc_angles(center, start_point, end_point):
+                    start_angle = np.arctan2(start_point[1] - center[1], start_point[0] - center[0])
+                    end_angle = np.arctan2(end_point[1] - center[1], end_point[0] - center[0])
 
-                print(center, radius, np.degrees(new_start_angle), np.degrees(new_end_angle))
+                    return start_angle, end_angle
+
+                center, radius, start_point, end_point = calculate_arc(arc)
+                new_start_point = np.dot(self.transform_matrix, start_point)
+                new_end_point = np.dot(self.transform_matrix, end_point)
+                new_start_angle, new_end_angle = calculate_arc_angles(center, new_start_point, new_end_point)
+
+                # print(center, radius, np.degrees(new_start_angle), np.degrees(new_end_angle))
+
                 arc1 = patches.Arc(
-                    center,
-                    radius,
-                    radius,
+                    (center[0], center[1]),
+                    radius * 2,
+                    radius * 2,
                     angle=0,
                     theta1=np.degrees(new_start_angle),
                     theta2=np.degrees(new_end_angle),
                 )
                 ax.add_patch(arc1)
-                plt.gca().set_aspect("equal", adjustable="box")
 
         plt.grid(True)
         plt.xlim(-10, 10)
         plt.ylim(-10, 10)
-        plt.axis("equal")
+        plt.gca().set_aspect("equal", adjustable="box")
         plt.show()
 
 
