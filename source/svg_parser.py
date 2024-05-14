@@ -12,7 +12,7 @@ class ParseSVG:
         # Путь к SVG файлу
         self.svg_file_path = svg_file_path
         file_name = os.path.basename(self.svg_file_path)
-        logging.info(file_name + "\n")
+        logging.info("\n" + file_name + "\n")
 
         # Загрузка SVG файла
         tree = ET.parse(svg_file_path)

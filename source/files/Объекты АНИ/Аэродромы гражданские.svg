@@ -95,67 +95,8 @@
          id="rect2-2" />
     </clipPath>
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.3"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="22.4"
-     inkscape:cx="22.5"
-     inkscape:cy="18.147321"
-     inkscape:document-units="mm"
-     inkscape:showpageshadow="2"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:window-width="1920"
-     inkscape:window-height="986"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1"
-     inkscape:lockguides="true"
-     showguides="true">
-    <sodipodi:guide
-       position="0.03340869,6.261693"
-       orientation="1,0"
-       id="guide11"
-       inkscape:locked="true" />
-    <sodipodi:guide
-       position="2.2049736,8.4332579"
-       orientation="0,-1"
-       id="guide12"
-       inkscape:locked="true" />
-  </sodipodi:namedview>
-  <metadata
-     id="metadata1">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
   <g
      id="g13">
-    <g
-       clip-path="url(#clip0)"
-       id="g4"
-       transform="matrix(0.22619879,0,0,0.22548797,2.3536121,-1.7135894)"
-       style="stroke:#40bfbf;stroke-opacity:1">
-      <g
-         transform="matrix(1.5748e-4,0,0,1.5748e-4,0,0)"
-         id="g3"
-         style="stroke:#40bfbf;stroke-opacity:1">
-        <g
-           clip-path="url(#clip2)"
-           id="g2"
-           style="stroke:#40bfbf;stroke-opacity:1" />
-      </g>
-    </g>
     <ellipse
        style="fill:none;stroke:#40bfbf;stroke-width:1.61945;stroke-dasharray:none;stroke-opacity:1"
        id="path11"
